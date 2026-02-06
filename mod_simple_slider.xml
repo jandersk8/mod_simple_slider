@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.0" client="site" method="upgrade">
+    <name>BR Simple Slider</name>
+    
+    <author>Janderson Moreira</author>
+    <creationDate>February 2026</creationDate>
+    <copyright>Copyright (c) 2026 Janderson Moreira.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <authorEmail>jandersonmm@gmail.com</authorEmail>
+    <authorUrl>https://github.com/jandersk8</authorUrl>
+    <version>1.0</version>
+    
+    <description><![CDATA[
+        <h3>BR Simple Slider</h3>
+        <p>A lightweight, responsive image slider with fade effect.</p>
+        <p><strong>Instructions:</strong></p>
+        <ul>
+            <li><strong>Image Folder:</strong> Enter the folder name located inside your Joomla 'images' directory (e.g., 'headers').</li>
+            <li><strong>Duration:</strong> Set the time in seconds for each slide to remain visible.</li>
+            <li><strong>Height:</strong> Set the slider height (e.g., 500px or 100vh).</li>
+        </ul>
+        <p>No external libraries required. Fully responsive.</p>
+    ]]></description>
+
+    <updateservers>
+        <server type="extension" priority="1" name="BR Simple Slider Updates">https://raw.githubusercontent.com/jandersk8/mod_simple_slider/main/update.xml</server>
+    </updateservers>
+
+    <files>
+        <filename module="mod_simple_slider">mod_simple_slider.php</filename>
+        <filename>helper.php</filename>
+        <folder>tmpl</folder>
+        <folder>assets</folder>
+        <file>LICENSE.txt</file>
+    </files>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field 
+                    name="folder_path" 
+                    type="text" 
+                    default="headers" 
+                    label="Folder Name" 
+                    description="Enter the folder name inside 'images' (e.g., headers)." 
+                    required="true"
+                />
+
+                <field 
+                    name="slide_duration" 
+                    type="number" 
+                    default="4" 
+                    label="Slide Duration (Seconds)" 
+                    description="Time in seconds for each image to show." 
+                    min="1"
+                    max="60"
+                    step="1"
+                    required="true"
+                />
+
+                <field 
+                    name="slider_height" 
+                    type="text" 
+                    default="500px" 
+                    label="Slider Height" 
+                    description="Enter height with unit (e.g., 500px, 100vh, 50%)." 
+                    required="true"
+                />
+            </fieldset>
+        </fields>
+    </config>
+</extension>

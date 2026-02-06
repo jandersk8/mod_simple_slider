@@ -1,0 +1,45 @@
+/* Container: Full width, relative positioning for stacked slides */
+.br-simple-slider-container {
+    position: relative;
+    width: 100%;
+    /* A altura fixa de 500px foi removida daqui.
+       Agora, a altura é definida dinamicamente no HTML via style="height:..."
+       pelo valor que o usuário inserir no painel.
+    */
+    overflow: hidden;
+    background-color: #000; /* Fallback color */
+}
+
+/* Individual Slide: Absolute to stack on top of each other */
+.br-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out; /* The Fade Effect */
+    z-index: 1;
+}
+
+/* The active class makes the slide visible */
+.br-slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+/* Image styling: Responsive and Covering the area */
+.br-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers the div without distortion */
+    object-position: center;
+    display: block;
+}
+
+/* Mobile Responsiveness adjustment */
+@media (max-width: 768px) {
+    /* A altura de 300px foi removida daqui também, pois o valor 
+       do painel deve ser usado em todas as telas. 
+    */
+}
